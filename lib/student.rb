@@ -15,7 +15,7 @@ class Student
 
   def self.create_table
     sql = <<-SQL
-    SELECT TABLE IF NOT EXISTS student (
+    CREATE TABLE IF NOT EXISTS students (
       id INTEGER PRIMARY KEY
       name TEXT
       grade INTEGER
@@ -46,5 +46,7 @@ class Student
       @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
     end
   end
+
+  def
 
 end
